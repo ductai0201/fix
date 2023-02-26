@@ -1,0 +1,12 @@
+{
+  "products": [
+    {
+      "name": "ahihi",
+      "cate": "abc",
+      "des": "abb",
+      "img": "https://res.cloudinary.com/dtiwyksp8/image/upload/v1677428392/Portfolio_ECMA/oluwip09rr7f8zecez1w.jpg",
+      "regular": "12000",
+      "id": 9
+    }
+  ]
+}
