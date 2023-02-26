@@ -9,73 +9,76 @@ const productEdit = ({id}) => {
     fetch("http://localhost:3000/products/"+id)
       .then((Response) => Response.json())
       .then((data) => setProduct(data));
+
+      const formahihi = document.querySelector('#form-add');
+      const name = document.querySelector('#product-name');
+      const cate = document.querySelector('#product-cate');
+      const des = document.querySelector('#product-des');
+      const img = document.querySelector('#product-img');
+      const regular = document.querySelector('#product-regular');
+
+         console.log(formahihi);
+
+      formahihi.addEventListener('submit',async (e)=>{
+          e.preventDefault();
+        alert('ahihi')
+        //   const file = img.files[0];
+        //   console.log(form);
+        //   let url = imgCurrent;
+        //   if(file){
+        //     url = await uploadFile(file);
+        //   }
+          
+        //  const formNew = {
+        //       id,
+        //       name: name.value,
+        //       cate: cate.value,
+        //       des: des.value,
+        //       img: url,
+        //       regular: regular.value,
+        //   }
+        //   fetch('http://localhost:3000/products/'+id,{
+        //     method: 'PUT',
+        //     headers: {
+        //       'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(formNew)
+        //   })
+          
+      })
+      
+      const uploadFile = async(file)=>{
+          if(file){
+              const CLOUD_NAME =  "dtiwyksp8";
+              const PRESET_NAME = "portfolio_ECMA";
+              const FOLDER_NAME = "Portfolio_ECMA";
+              const api = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
+              const formdata = new FormData();
+              formdata.append("upload_preset",PRESET_NAME);
+              formdata.append("folder",FOLDER_NAME);
+              formdata.append("file",file);
+
+              const response = await axios.post(api,formdata,{
+                  headers: {
+                      'Content-Type': 'multipart/form-data'
+                  }
+              });
+              console.log(response);
+              return response.data.secure_url
+          }
+          return ''
+      }
+
+  const currentImg = document.querySelector('.currenImg');
+  if (currentImg) {
+    setCurrent(currentImg.getAttribute('src') || '');
+  }
   },[]);
 
-  useEffect(()=>{
-
-        const form = document.querySelector('#form-add');
-        const name = document.querySelector('#product-name');
-        const cate = document.querySelector('#product-cate');
-        const des = document.querySelector('#product-des');
-        const img = document.querySelector('#product-img');
-        const regular = document.querySelector('#product-regular');
-
-        form.addEventListener('submit',async function(e){
-            e.preventDefault();
-            const file = img.files[0];
-            let url = imgCurrent;
-            if(file){
-              url = await uploadFile(file);
-            }
-            
-           const formNew = {
-                id,
-                name: name.value,
-                cate: cate.value,
-                des: des.value,
-                img: url,
-                regular: regular.value,
-            }
-            fetch('http://localhost:3000/products/'+id,{
-              method: 'PUT',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(formNew)
-            })
-            
-        })
-        
-        const uploadFile = async(file)=>{
-            if(file){
-                const CLOUD_NAME =  "dtiwyksp8";
-                const PRESET_NAME = "portfolio_ECMA";
-                const FOLDER_NAME = "Portfolio_ECMA";
-                const api = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
-                const formdata = new FormData();
-                formdata.append("upload_preset",PRESET_NAME);
-                formdata.append("folder",FOLDER_NAME);
-                formdata.append("file",file);
-
-                const response = await axios.post(api,formdata,{
-                    headers: {
-                        'Content-Type': 'multipart/form-data'
-                    }
-                });
-                return response.data.secure_url
-            }
-            return ''
-        }
-
-    const currentImg = document.querySelector('.currenImg');
-    if (currentImg) {
-      setCurrent(currentImg.getAttribute('src') || '');
-    }
-
-  },[])
+ 
   return `
   <div class="container pt-5">
-  <form action="" id="form-add">
+  <form method="POST" action="" id="form-add">
    
       
       <div class="form-group">
