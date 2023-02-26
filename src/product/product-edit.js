@@ -10,7 +10,7 @@ const productEdit = ({id}) => {
       .then((Response) => Response.json())
       .then((data) => setProduct(data));
 
-      const formahihi = document.querySelector('#form-add');
+      const formahihi = document.querySelector('#form-update');
       const name = document.querySelector('#product-name');
       const cate = document.querySelector('#product-cate');
       const des = document.querySelector('#product-des');
@@ -21,7 +21,7 @@ const productEdit = ({id}) => {
 
       formahihi.addEventListener('submit',async (e)=>{
           e.preventDefault();
-        alert('ahihi')
+          alert('ahihi')
         //   const file = img.files[0];
         //   console.log(form);
         //   let url = imgCurrent;
@@ -78,7 +78,7 @@ const productEdit = ({id}) => {
  
   return `
   <div class="container pt-5">
-  <form method="POST" action="" id="form-add">
+  <form action="" >
    
       
       <div class="form-group">
@@ -108,7 +108,7 @@ const productEdit = ({id}) => {
       </div>
       
 
-      <button class="btn btn-primary mt-3">Thêm</button>
+      <button type="button" id="form-update" class="btn btn-primary mt-3">Thêm</button>
   </form>
 </div>`;
 };
