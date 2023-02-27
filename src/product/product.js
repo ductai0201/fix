@@ -1,4 +1,5 @@
 import axios from "axios";
+import Swal from "sweetalert2";
 import { useEffect, router, useState } from "../lib";
 
 const product = () => {
@@ -16,11 +17,26 @@ const product = () => {
       btn.addEventListener("click", function (e) {
         e.preventDefault();
         const id = this.dataset.id;
-        fetch("http://localhost:3000/products/" + id, {
-          method: "DELETE",
-        }).then(() => {
-          const newform = products.filter((product) => product.id != id);
-          setProduct(newform);
+
+        Swal.fire({
+          title: "Bạn có muốn xóa không?",
+          showDenyButton: true,
+          showCancelButton: true,
+          confirmButtonText: "Delete",
+          denyButtonText: `Don't Delete`,
+        }).then((result) => {
+          /* Read more about isConfirmed, isDenied below */
+          if (result.isConfirmed) {
+            Swal.fire("Saved!", "", "success");
+            fetch("http://localhost:3000/products/" + id, {
+              method: "DELETE",
+            }).then(() => {
+              const newform = products.filter((product) => product.id != id);
+              setProduct(newform);
+            });
+          } else if (result.isDenied) {
+            Swal.fire("Changes are not delete", "", "info");
+          }
         });
       });
     }
