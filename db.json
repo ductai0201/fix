@@ -1,19 +1,12 @@
 {
   "products": [
     {
-      "name": "ahihi",
+      "id": 9,
+      "name": "ahihi 3 ahihi update ahihihiiiii",
       "cate": "abc",
       "des": "abb",
-      "img": "https://res.cloudinary.com/dtiwyksp8/image/upload/v1677428392/Portfolio_ECMA/oluwip09rr7f8zecez1w.jpg",
-      "regular": "12000",
-      "id": 9
-    },
-    {
-      "name": "",
-      "cate": "",
-      "des": "",
-      "regular": "",
-      "id": 10
+      "img": "https://res.cloudinary.com/dtiwyksp8/image/upload/v1677477435/Portfolio_ECMA/wo0ev3e9w0b7hqunqrfr.jpg",
+      "regular": "12000"
     }
   ]
 }

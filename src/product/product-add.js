@@ -22,7 +22,13 @@ const productAdd = () => {
                 img: url,
                 regular: regular.value,
             }
-           
+            fetch('http://localhost:3000/products',{
+                method: 'POST',
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formNew)
+            }).then(()=> router.navigate('/product'))
         })
         
         const uploadFile = async(file)=>{

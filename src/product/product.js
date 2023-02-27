@@ -60,7 +60,7 @@ const product = () => {
                     <button data-id="${
                       product.id
                     }" class="btn btn-danger btn-remove">Remove</button>
-                        <a href="/product/${product.id}/edit" >Edit</a>
+                        <a href="/#/product/${product.id}/edit" >Edit</a>
                     </td>
                 </tr>
                 `;
