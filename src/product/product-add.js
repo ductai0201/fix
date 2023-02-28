@@ -1,7 +1,9 @@
 import axios from "axios";
+import Swal from "sweetalert2";
 import { useEffect, router } from "../lib";
 
 const productAdd = () => {
+
   return `
     <div class="container pt-5">
     <form action="" id="form-add">

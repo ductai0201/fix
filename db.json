@@ -1,12 +1,28 @@
 {
   "products": [
     {
-      "name": "ahihi 3 ahihi",
+      "name": "ahihi",
       "cate": "abc",
       "des": "abb",
-      "img": "https://res.cloudinary.com/dtiwyksp8/image/upload/v1677428368/Portfolio_ECMA/haojsctk3vaj6ohegm7m.jpg",
+      "img": "https://res.cloudinary.com/dtiwyksp8/image/upload/v1677499501/nijs4inqky0lh2mfndlf.jpg",
+      "regular": "23000",
+      "id": 14
+    },
+    {
+      "name": "ahihi",
+      "cate": "abc",
+      "des": "abb",
+      "img": "https://res.cloudinary.com/dtiwyksp8/image/upload/v1677561974/iyt1ldmfj0zo9s4pmoyr.jpg",
       "regular": "12000",
-      "id": 11
+      "id": 15
+    }
+  ],
+  "users": [
+    {
+      "email": "ductaiuc@gmail.com",
+      "password": "abc",
+      "name": "admin3",
+      "id": 2
     }
   ]
 }
